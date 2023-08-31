@@ -1,7 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({attributes}) {
-	const {firstBackground} = attributes
+	const {firstBackground, secondBackground} = attributes
 	
 	return (
 		<div 
@@ -11,7 +11,8 @@ export default function save({attributes}) {
 				padding: "1em"
 			}}	
 		>
-			<h2>Background: {firstBackground}</h2>
+			<h2>First Background: {firstBackground}</h2>
+			<h2>Second Background: {secondBackground}</h2>
 		</div>
 	);
 }

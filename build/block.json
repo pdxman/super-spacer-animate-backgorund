@@ -15,6 +15,10 @@
     "firstBackground": {
       "type": "string",
       "default": "red"
+    },
+    "secondBackground": {
+      "type": "string",
+      "default": "red"
     }
   },
   "textdomain": "super-spacer-animate-background",
