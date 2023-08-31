@@ -26,6 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Edit({
   attributes,
   setAttributes
@@ -34,7 +35,27 @@ function Edit({
     firstBackground,
     secondBackground
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
+  const backgroundRef = {
+    useRef: _wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef
+  };
+  const backgroundColors = [{
+    background: `${firstBackground}`
+  }, {
+    background: `${secondBackground}`
+  }];
+  const backgroundTiming = {
+    duration: 4000,
+    iterations: Infinity,
+    direction: 'alternate',
+    fill: 'forwards'
+  };
+  function animateBackground() {
+    backgroundRef.current.animate(backgroundColors, backgroundTiming);
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    isPrimary: true,
+    onClick: animateBackground
+  }, "Set Background Animation"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
     label: "Set the First Background Color",
     value: firstBackground,
     onChange: newFirstBackground => setAttributes({
@@ -48,6 +69,7 @@ function Edit({
     })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
+    ref: backgroundRef,
     style: {
       background: `${firstBackground}`,
       padding: "2em"
@@ -134,13 +156,29 @@ function save({
     firstBackground,
     secondBackground
   } = attributes;
+  const backgroundColors = [{
+    background: `${firstBackground}`
+  }, {
+    background: `${secondBackground}`
+  }];
+  const backgroundTiming = {
+    duration: 4000,
+    iterations: Infinity,
+    direction: 'alternate',
+    fill: 'forwards'
+  };
+  function animateBackground() {
+    backgroundRef.current.animate(backgroundColors, backgroundTiming);
+  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
     style: {
       background: `${firstBackground}`,
       padding: "1em"
     }
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "First Background: ", firstBackground), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Second Background: ", secondBackground));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: animateBackground
+  }, "Animate"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "First Background: ", firstBackground), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Second Background: ", secondBackground));
 }
 
 /***/ }),
