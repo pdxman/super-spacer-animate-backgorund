@@ -5,11 +5,17 @@
   "version": "0.1.0",
   "title": "Super Spacer Animate Background",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "admin-appearance",
+  "description": "Block with an animated background color",
   "example": {},
   "supports": {
     "html": false
+  },
+  "attributes": {
+    "firstBackground": {
+      "type": "string",
+      "default": "red"
+    }
   },
   "textdomain": "super-spacer-animate-background",
   "editorScript": "file:./index.js",
