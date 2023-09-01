@@ -50,7 +50,8 @@ export default function Edit({attributes, setAttributes}) {
 				ref={backgroundRef}
 				style={{
 					background: `${firstBackground}`,
-					padding: "2em"
+					padding: "2em",
+					// --backgroundOne: `${firstBackground}`
 				}}
 			>
 				<h2>First Background: {firstBackground}</h2>

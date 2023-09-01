@@ -7,5 +7,24 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+@keyframes runBgAnimation {
+  0% {
+    background: var(--bgOne);
+  }
+  100% {
+    background: var(--bgTwo);
+  }
+}
+.blockWrapper {
+  animation: runBgAnimation 1s ease alternate forwards infinite;
+}
+
+.first-bg {
+  background: var(--bgOne);
+}
+
+.second-bg {
+  background: var(--bgTwo);
+}
 
 /*# sourceMappingURL=style-index.css.map*/
